@@ -1,0 +1,40 @@
+﻿<Page x:Class="ParkingApp.Views.Pages.ClientAddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ParkingApp.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ClientAddPage">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Фамилия:"></TextBlock>
+            <TextBox Text="{Binding ClientData.LastName}" Width="200"></TextBox>
+            
+            <TextBlock Text="Имя:"></TextBlock>
+            <TextBox Text="{Binding ClientData.FirstName}" Width="200"></TextBox>
+
+            <TextBlock Text="Отчество:"></TextBlock>
+            <TextBox Text="{Binding ClientData.Patronymic}" Width="200"></TextBox>
+
+            <TextBlock Text="Номер телефона:"></TextBlock>
+            <TextBox Text="{Binding ClientData.Phone}" Width="200"></TextBox>
+
+            <TextBlock Text="Марка автомобиля:"></TextBlock>
+            <TextBox Text="{Binding ClientData.Brand}" Width="200"></TextBox>
+
+            <TextBlock Text="Модель:"></TextBlock>
+            <TextBox Text="{Binding ClientData.Model}" Width="200"></TextBox>
+
+            <TextBlock Text="Гос номер:"></TextBlock>
+            <TextBox Text="{Binding ClientData.GosNumber}" Width="200"></TextBox>
+
+            <TextBlock Text="Просьба:"></TextBlock>
+            <TextBox Text="{Binding ClientData.Comment}" Width="200"></TextBox>
+
+            <Button Content="Подать заявку" Name="SaveBtn" Click="SaveBtn_Click" Margin="0,10,0,0"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
