@@ -18,6 +18,7 @@ namespace ParkingWebServer
     {
         static void Main(string[] args)
         {
+            ///Инициализация сервера
             HttpListener server = new HttpListener();
             server.Prefixes.Add("http://localhost:21231/");
 
@@ -27,6 +28,8 @@ namespace ParkingWebServer
             while (true)
             {
                 HttpListenerContext context = server.GetContext();
+
+                ///Api запрос на отображение данных из БД 
                 if (context.Request.HttpMethod == "GET")
                 {
                     try
@@ -44,15 +47,17 @@ namespace ParkingWebServer
                             }
                         }
                     }
+                    ///Обработка исключений
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
                         context.Response.StatusCode = 200;
                         context.Response.Close();
                     }
-                   
+
                 }
-                else if(context.Request.HttpMethod == "DELETE")
+                 ///Api запрос на удаление данных из БД 
+                else if (context.Request.HttpMethod == "DELETE")
                 {
                     try
                     {
@@ -72,15 +77,17 @@ namespace ParkingWebServer
                             }
                         }
                     }
+                    ///Обработка исключений
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
                         context.Response.StatusCode = 400;
                         context.Response.Close();
-                        
+
                     }
                 }
-                else if(context.Request.HttpMethod == "POST")
+                ///Api запрос на добавление данных из БД 
+                else if (context.Request.HttpMethod == "POST")
                 {
                     try
                     {
@@ -113,12 +120,12 @@ namespace ParkingWebServer
                         }
 
                     }
+                    ///Обработка исключений
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
                         context.Response.StatusCode = 400;
                         context.Response.Close();
-                       
                     }
                 }
             }

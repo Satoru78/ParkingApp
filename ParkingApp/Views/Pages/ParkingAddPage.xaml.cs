@@ -23,6 +23,7 @@ namespace ParkingApp.Views.Pages
     public partial class ParkingAddPage : Page
     {
         public Parking Parking { get; set; }
+
         public List<ClientData> ClientDatas { get; set; }
         public ParkingAddPage(Parking parking)
         {

@@ -48,12 +48,12 @@ namespace ParkingApp.Views.Pages
             List<Parking> list = new List<Parking>();
             foreach (Parking item in collection)
             {
-                if (item.DateStart.AddYears(item.DateEnd.Day) < DateTime.Today) 
+                if (item.DateEnd.Date < DateTime.Today)
                 {
                     list.Add(item);
                 }
             }
-            if (list.Count > 0)
+            if (list.Any())
             {
                 return list;
             }
